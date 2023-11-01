@@ -124,6 +124,7 @@ max_join_attempts表示尝试次数，如果自动发现不了，几次后就不
                 <property name="datasource_jndi_name">java:jboss/datasources/KeycloakDS</property>
                 <property name="initialize_sql">CREATE TABLE IF NOT EXISTS JGROUPSPING (own_addr varchar(200) NOT NULL, cluster_name varchar(200) NOT NULL, updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, ping_data varbinary(5000) DEFAULT NULL, PRIMARY KEY (own_addr, cluster_name))
                 </property>
+                <property name="remove_all_data_on_view_change">true</property>
             </protocol>
             <protocol type="MERGE3"/>
             <protocol type="FD_SOCK" socket-binding="jgroups-tcp-fd"/>
